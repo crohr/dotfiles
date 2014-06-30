@@ -24,6 +24,7 @@ Bundle "Align"
 " FuzzyFinder
 Bundle "L9"
 Bundle "FuzzyFinder"
+Bundle "ctrlp.vim"
 
 " tComment
 Bundle "tComment"
