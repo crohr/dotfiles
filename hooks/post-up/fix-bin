@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ -d "$HOME/.bin" ];
+then mv "$HOME/.bin" "$HOME/bin";
+fi
+
