@@ -30,3 +30,6 @@ PS1="\$(date \"+%H:%M:%S\") \u@\h \w\$(parse_git_branch) $\n"
 
 PROMPT_COMMAND="[ -f $HOME/bin/fixssh ] && source $HOME/bin/fixssh"
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+export RBENV_ROOT=~/.rbenv
+eval "$(rbenv init -)"
