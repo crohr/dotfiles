@@ -7,7 +7,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Bundle "rails.vim"
 " Auto-detect indentation
-Bundle "tpope/vim-sleuth"
+" Bundle "tpope/vim-sleuth"
 Bundle "Markdown"
 
 Bundle "git.zip"
@@ -44,10 +44,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " show hidden files by default in ctrlp
 let g:ctrlp_show_hidden = 1
 
 " easily switch between paste and nopaste
 set pastetoggle=<F6>
+
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
