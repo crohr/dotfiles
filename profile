@@ -33,3 +33,4 @@ PROMPT_COMMAND="[ -f $HOME/bin/fixssh ] && source $HOME/bin/fixssh"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export RBENV_ROOT=~/.rbenv
 eval "$(rbenv init -)"
+source /home/crohr/.rbenvrc
