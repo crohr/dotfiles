@@ -36,7 +36,10 @@ PS1="\$(date \"+%H:%M:%S\") \u@\h \w\$(parse_git_branch) $\n"
 
 PROMPT_COMMAND="[ -f $HOME/bin/fixssh ] && source $HOME/bin/fixssh"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/opt/packer/bin:$PATH"
 export RBENV_ROOT=~/.rbenv
+export GOPATH="/home/crohr/dev/golang"
+export PATH=${PATH}:$HOME/gsutil
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+PATH="/usr/local/heroku/bin:$PATH"
