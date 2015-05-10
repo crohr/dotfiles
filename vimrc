@@ -60,3 +60,6 @@ autocmd Filetype scss setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype conf setlocal ts=2 sts=2 sw=2 expandtab
+
+syntax on
+set number
