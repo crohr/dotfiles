@@ -1,6 +1,10 @@
 #!/bin/bash
 
-if [ -d "$HOME/.bin" ];
-then mv "$HOME/bin" "$HOME/bin-$(date +%s)" && mv "$HOME/.bin" "$HOME/bin";
-fi
+echo "Running hook: $0"
 
+if [ -d "$HOME/.bin" ]; then
+	if [ -d "$HOME/bin" ]; then
+		mv "$HOME/bin" "$HOME/bin-$(date +%s)"
+	fi
+	mv "$HOME/.bin" "$HOME/bin"
+fi
