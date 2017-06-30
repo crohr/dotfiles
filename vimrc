@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'fatih/vim-go'
 Bundle "rails.vim"
 " Bundle 'KurtPreston/vim-autoformat-rails'
 " Auto-detect indentation
@@ -52,6 +53,7 @@ let g:ctrlp_show_hidden = 1
 set pastetoggle=<F6>
 
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd Filetype eruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -63,3 +65,5 @@ autocmd Filetype conf setlocal ts=2 sts=2 sw=2 expandtab
 
 syntax on
 set number
+autocmd Filetype sh setlocal tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab
+" autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab
