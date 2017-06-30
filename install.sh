@@ -33,20 +33,32 @@ apt-get install -y \
 	sudo \
 	wget \
 	tmux \
-	bash-completion
+	bash-completion \
+	cron
 
+# docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 add-apt-repository \
 	"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 	$(lsb_release -cs) \
 	 stable"
+# rcm
 add-apt-repository -y ppa:martin-frost/thoughtbot-rcm
+# virtualbox
+echo 'deb http://download.virtualbox.org/virtualbox/debian yakkety contrib' > /etc/apt/sources.list.d/virtualbox.list
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+
 
 wget -qO - https://deb.packager.io/key | apt-key add -
 echo "deb https://deb.packager.io/gh/pkgr/docker-gc xenial pkgr" | tee /etc/apt/sources.list.d/docker-gc.list
 
 apt-get update -qq
-apt-get install -y docker-ce docker-gc rcm
+apt-get install -y \
+	docker-ce \
+	docker-gc \
+	rcm \
+	virtualbox-dkms \
+	virtualbox
 
 getent group docker || groupadd docker
 usermod -aG docker $MY_USER
