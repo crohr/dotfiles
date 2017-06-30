@@ -77,4 +77,6 @@ rm -rf $MY_HOME/.vim/bundle/Vundle.vim
 git clone https://github.com/gmarik/Vundle.vim.git $MY_HOME/.vim/bundle/Vundle.vim
 rcup -x install.sh
 vim +PluginInstall +qall
+echo 'Host *
+  PubkeyAcceptedKeyTypes=+ssh-dss' > $MY_HOME/.ssh/config
 "
