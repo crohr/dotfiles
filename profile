@@ -38,8 +38,14 @@ PROMPT_COMMAND="[ -f $HOME/bin/fixssh ] && source $HOME/bin/fixssh"
 
 export PATH="$HOME/.rbenv/bin:/opt/packer/bin:$PATH"
 export RBENV_ROOT=~/.rbenv
-export GOPATH="/home/crohr/dev/golang"
 export PATH=${PATH}:$HOME/gsutil
+export PATH="${PATH}:/usr/local/go/bin"
+
+# ec2-status --profile crohr --region us-east-1
+ec2-status() {
+	aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,LaunchTime,State.Name]' --output text "$@" | sort -n -k 2
+}
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 PATH="/usr/local/heroku/bin:$PATH"
+alias http="python -m SimpleHTTPServer"
