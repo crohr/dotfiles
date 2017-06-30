@@ -19,6 +19,7 @@ id $MY_USER || useradd -d $MY_HOME --shell /bin/bash -m $MY_USER
 echo 'crohr    ALL = NOPASSWD: ALL' > /etc/sudoers.d/crohr
 
 workspace=$(mktemp -d)
+
 apt-get update -qq
 apt-get install -y \
 	apt-transport-https \
@@ -33,6 +34,7 @@ apt-get install -y \
 	sudo \
 	wget \
 	tmux \
+	lsof \
 	bash-completion \
 	cron
 
