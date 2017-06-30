@@ -85,7 +85,7 @@ chown -R $MY_USER:$MY_USER $MY_HOME/.dotfiles
 
 rm -rf $workspace
 
-su -l crohr -c "
+su -l $MY_USER -c "
 mkdir -p ~/dev
 rm -rf $MY_HOME/.vim/bundle/Vundle.vim
 git clone https://github.com/gmarik/Vundle.vim.git $MY_HOME/.vim/bundle/Vundle.vim
@@ -94,3 +94,11 @@ vim +PluginInstall +qall
 echo 'Host *
   PubkeyAcceptedKeyTypes=+ssh-dss' > $MY_HOME/.ssh/config
 "
+
+# After that, move over the following private stuff:
+# .gnupg/
+# .aws/
+# .docker/
+# .gsutil/
+# .curlrc
+# .bundle/config
