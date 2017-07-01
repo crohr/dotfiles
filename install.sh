@@ -36,7 +36,8 @@ apt-get install -y \
 	tmux \
 	lsof \
 	bash-completion \
-	cron
+	cron \
+	git-crypt
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
