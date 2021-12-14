@@ -16,36 +16,21 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if which brew &>/dev/null; then
-	if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	  . $(brew --prefix)/etc/bash_completion
-	fi
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-PS1="\$(date \"+%H:%M:%S\") \[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch) $\n"
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 [ -n "${TMUX+x}" ] || $HOME/bin/grabssh
 
 PROMPT_COMMAND="[ -f $HOME/bin/fixssh ] && source $HOME/bin/fixssh"
 
-export PATH="$HOME/.rbenv/bin:/opt/packer/bin:$PATH"
-export RBENV_ROOT=~/.rbenv
-export PATH=${PATH}:$HOME/gsutil
-export PATH="${PATH}:/usr/local/go/bin"
-
-# ec2-status --profile crohr --region us-east-1
-ec2-status() {
-	aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,LaunchTime,State.Name]' --output text "$@" | sort -n -k 2
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-PATH="/usr/local/heroku/bin:$PATH"
-alias http="python -m SimpleHTTPServer"
+PS1="\$(date \"+%H:%M:%S\") \[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch) $\n"
