@@ -95,6 +95,5 @@ vim +PluginInstall +qall
 # .gnupg/
 # .aws/
 # .docker/
-# .gsutil/
-# .curlrc
-# .bundle/config
+# .netrc
+# .vpn/

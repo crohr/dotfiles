@@ -1,0 +1,13 @@
+#!/bin/bash
+set -ex
+
+profile="$1"
+action="$2"
+
+if [ "$action" = "start" ]; then
+	exec openvpn3 session-start --config /home/crohr/.vpn/$profile.ovpn  --persist-tun
+fi
+
+if [ "$action" = "stop" ]; then
+	exec openvpn3 session-manage --config /home/crohr/.vpn/$profile.ovpn --disconnect
+fi
