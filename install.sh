@@ -44,11 +44,10 @@ add-apt-repository \
 	"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
 	$(lsb_release -cs) \
 	 stable"
-# rcm
-add-apt-repository -y ppa:martin-frost/thoughtbot-rcm
+
 # virtualbox
-echo 'deb http://download.virtualbox.org/virtualbox/debian yakkety contrib' > /etc/apt/sources.list.d/virtualbox.list
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+#echo 'deb http://download.virtualbox.org/virtualbox/debian yakkety contrib' > /etc/apt/sources.list.d/virtualbox.list
+#wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 
 apt-get update -qq
 apt-get install -y \

@@ -1,6 +1,6 @@
 ## Installation
 
-### Ubuntu 16.04
+### Ubuntu 20.04
 
 Run the install script (idempotent):
 
