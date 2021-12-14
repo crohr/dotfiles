@@ -99,7 +99,11 @@ vim +PluginInstall +qall
 #  PubkeyAcceptedKeyTypes=+ssh-dss' > $MY_HOME/.ssh/config
 "
 
-# Next, install rvm at rvm.io
+# install asdf - http://asdf-vm.com
+# asdf plugin add nodejs
+# asdf plugin add ruby
+
+# bundle config --global jobs $(nproc)
 
 # After that, move over the following private stuff:
 # .gnupg/
