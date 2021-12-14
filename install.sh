@@ -28,6 +28,7 @@ apt-get install -y \
 	libpq-dev \
 	postgresql \
 	redis-server \
+	snapd \
 	jq \
 	htop \
 	vim \
@@ -40,6 +41,8 @@ apt-get install -y \
 	bash-completion \
 	cron \
 	git-crypt
+
+snap install ngrok
 
 su - postgres -c "psql -c \"create role dev with superuser login password 'p4ssw0rd'\""
 
@@ -104,3 +107,4 @@ vim +PluginInstall +qall
 # .docker/
 # .netrc
 # .vpn/
+# .ngrok2/
