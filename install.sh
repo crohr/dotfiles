@@ -25,6 +25,8 @@ apt-get install -y \
 	ca-certificates \
 	curl \
 	software-properties-common \
+	libpq-dev \
+	postgresql \
 	jq \
 	htop \
 	vim \
@@ -37,6 +39,8 @@ apt-get install -y \
 	bash-completion \
 	cron \
 	git-crypt
+
+su - postgres -c "psql -c \"create role dev with superuser login password 'p4ssw0rd'\""
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -90,6 +94,8 @@ vim +PluginInstall +qall
 #echo 'Host *
 #  PubkeyAcceptedKeyTypes=+ssh-dss' > $MY_HOME/.ssh/config
 "
+
+# Next, install rvm at rvm.io
 
 # After that, move over the following private stuff:
 # .gnupg/
