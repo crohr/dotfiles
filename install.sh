@@ -27,6 +27,7 @@ apt-get install -y \
 	software-properties-common \
 	libpq-dev \
 	postgresql \
+	redis-server \
 	jq \
 	htop \
 	vim \
